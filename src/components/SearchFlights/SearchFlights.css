@@ -1,0 +1,39 @@
+.search-flights-container {
+  .filter-input {
+    width: 100%;
+    border: unset;
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacer-md);
+    margin-block-end: var(--spacer-md);
+  }
+
+  .flights-list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  button {
+    all: unset;
+    color: var(--white);
+    color: var(--black);
+    padding: var(--spacer-md);
+    border-radius: var(--border-radius-md);
+    background-color: var(--white);
+  }
+  button:hover {
+    cursor: pointer;
+    user-select: none;
+  }
+  button:disabled,
+  button.button--active:disabled {
+    background-color: var(--grey-broken);
+  }
+  button:disabled:hover {
+    cursor: not-allowed;
+  }
+  button.button--active {
+    color: var(--white);
+    background-color: var(--schiphol-blue);
+  }
+}
