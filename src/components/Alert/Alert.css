@@ -1,0 +1,13 @@
+.alert-container {
+  padding: var(--spacer-md);
+  border-radius: var(--border-radius-md);
+}
+
+.alert-container.alert--danger {
+  color: var(--white);
+  background-color: var(--dark-red);
+}
+
+.alert-container.alert--info {
+  background-color: var(--light-blue);
+}
