@@ -9,6 +9,7 @@
 # How to test this application
 
 - TODO: add test scripts
+- Uncomment the error throw on line 22 in flightsApiService.ts to check out the Error Boundary
 
 # Design choices log
 
