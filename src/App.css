@@ -1,0 +1,7 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--grey-few);
+  font-family:
+    Neue Frutiger World,
+    sans-serif;
+}
