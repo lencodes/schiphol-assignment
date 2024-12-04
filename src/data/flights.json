@@ -25,7 +25,7 @@
       "flightNumber": "VY 8379",
       "airport": "Santiago Com",
       "date": "2022-02-22",
-      "expectedTime": "15:55",
+      "expectedTime": "16:55",
       "originalTime": "15:55",
       "url": "/en/departures/flight/D20190401VY8379/",
       "score": "62.708916"
@@ -35,7 +35,7 @@
       "flightNumber": "KL 701",
       "airport": "Santiago",
       "date": "2022-02-20",
-      "expectedTime": "21:00",
+      "expectedTime": "21:30",
       "originalTime": "21:00",
       "url": "/en/departures/flight/D20190401KL0701/",
       "score": "58.897865"
