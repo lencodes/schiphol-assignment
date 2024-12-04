@@ -1,25 +1,27 @@
 .search-flights-page {
   width: 90%;
-  max-width: 800px;
   height: 100%;
   margin: 0 auto;
+  max-width: 800px;
   padding-block: var(--spacer-lg);
 
   .header {
     display: flex;
     align-items: center;
+    color: var(--white);
+    gap: var(--spacer-lg);
+    padding: var(--spacer-md);
     justify-content: space-between;
+    margin-block-end: var(--spacer-md);
+    background: var(--gradient-flights);
+    border-radius: var(--border-radius-md);
   }
 
   img {
-    max-width: 375px;
+    max-width: 45%;
   }
 
   .title {
     font-size: var(--font-size-lg);
-    background: var(--gradient-flights);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
   }
 }

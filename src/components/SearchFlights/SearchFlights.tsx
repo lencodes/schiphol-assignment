@@ -4,9 +4,9 @@ import { Flight, flightsApiService } from '../../services/flightsApiService';
 import { filterAndSortFlights } from '../../helpers/filterAndSortFlights';
 import { TOrder } from '../../data/types';
 import { FlightListCard } from '../FlightListCard/FlightListCard';
+import { Alert } from '../Alert/Alert';
 
 export const SearchFlights = () => {
-  const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
   const [flights, setFlights] = useState<Flight[]>([]);
   const [filterInput, setFilterInput] = useState('');
@@ -15,14 +15,9 @@ export const SearchFlights = () => {
   flightsApiService
     .fetchData()
     .then((res) => setFlights(res.data))
-    .catch((error) => setError(error))
     .finally(() => setIsLoading(false));
 
   const filteredFlights = filterAndSortFlights(flights, filterInput, order);
-
-  if (error) {
-    return <span>{error}</span>;
-  }
 
   return (
     <div className="search-flights-container">
@@ -55,10 +50,10 @@ export const SearchFlights = () => {
             ))}
           </ul>
 
-          <span>
+          <Alert.Info>
             Showing {filteredFlights.length} of {flights.length} flights based
             on your filters.
-          </span>
+          </Alert.Info>
         </>
       ) : null}
     </div>

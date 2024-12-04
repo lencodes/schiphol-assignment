@@ -1,6 +1,8 @@
 import './SearchFlightsPage.css';
 import flightSearchImage from '../../assets/fligh-search-asset.png';
 import { SearchFlights } from '../../components/SearchFlights/SearchFlights';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import { Alert } from '../../components/Alert/Alert';
 
 export const SearchFlightsPage = () => {
   return (
@@ -11,7 +13,15 @@ export const SearchFlightsPage = () => {
         <img src={flightSearchImage} alt="Search flights" />
       </div>
 
-      <SearchFlights />
+      <ErrorBoundary
+        fallback={
+          <Alert.Danger>
+            Oops, something went wrong. Try again later
+          </Alert.Danger>
+        }
+      >
+        <SearchFlights />
+      </ErrorBoundary>
     </div>
   );
 };

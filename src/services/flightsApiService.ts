@@ -19,6 +19,8 @@ interface FlightResponse {
 
 export const flightsApiService = {
   fetchData: () => {
+    // throw new Error('Something went wrong retrieving the flights.'); // Enable this line to see the ErrorBoundary logic
+
     return new Promise<FlightResponse>((resolve, reject) => {
       setTimeout(() => {
         const data: FlightResponse = {
@@ -28,7 +30,6 @@ export const flightsApiService = {
         };
 
         resolve(data);
-        // reject('Oops, something went wrong retrieving the flights.'); // Enable this line to show the error state
       }, 1500); // fake a loading time
     });
   },
