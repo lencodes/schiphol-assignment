@@ -34,7 +34,7 @@ export const SearchFlights = () => {
 
       <button
         disabled={isLoading}
-        className={order === 'asc' ? 'button--active' : ''}
+        className={order === 'asc' ? 'button--ascending' : ''}
         onClick={() => setOrder((old) => (old === 'asc' ? 'desc' : 'asc'))}
       >
         {order === 'asc' ? 'Ascending' : 'Descending'}

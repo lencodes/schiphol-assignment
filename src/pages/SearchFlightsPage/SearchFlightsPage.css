@@ -2,7 +2,7 @@
   width: 90%;
   height: 100%;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 900px;
   padding-block: var(--spacer-lg);
 
   .header {
@@ -10,7 +10,7 @@
     align-items: center;
     color: var(--white);
     gap: var(--spacer-lg);
-    padding: var(--spacer-md);
+    padding: var(--spacer-lg);
     justify-content: space-between;
     margin-block-end: var(--spacer-md);
     background: var(--gradient-flights);

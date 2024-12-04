@@ -26,13 +26,13 @@
     user-select: none;
   }
   button:disabled,
-  button.button--active:disabled {
+  button.button--ascending:disabled {
     background-color: var(--grey-broken);
   }
   button:disabled:hover {
     cursor: not-allowed;
   }
-  button.button--active {
+  button.button--ascending {
     color: var(--white);
     background-color: var(--schiphol-blue);
   }
