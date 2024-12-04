@@ -1,0 +1,25 @@
+.search-flights-page {
+  width: 90%;
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  padding-block: var(--spacer-lg);
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  img {
+    max-width: 375px;
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+    background: var(--gradient-flights);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
