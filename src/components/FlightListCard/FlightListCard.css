@@ -1,0 +1,48 @@
+.flight-list-card-container {
+  display: flex;
+  padding: var(--spacer-md);
+  font-size: var(--font-size-md);
+  margin-block: var(--spacer-sm);
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+
+  dd {
+    margin: 0;
+  }
+
+  .time-container {
+    width: 5rem;
+    font-weight: bold;
+  }
+
+  .expected-time {
+    color: var(--dark-red);
+  }
+
+  .time-changed {
+    font-weight: normal;
+    color: var(--grey-overcast);
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+  }
+
+  .information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-sm);
+  }
+
+  .airport-and-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flight-number,
+  .date {
+    font-weight: lighter;
+    color: var(--grey-overcast);
+    font-size: var(--font-size-sm);
+  }
+}
