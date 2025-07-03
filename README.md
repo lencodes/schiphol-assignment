@@ -9,7 +9,7 @@
 # How to test this application
 
 - Run `$ pnpm run test` to run the Vitest tests based in `/tests`
-- Uncomment the error throw on line `22` in `flightsApiService.ts` to check out the `ErrorBoundary`
+- Update `REJECT_FETCH` to `true` on line `3` in `flightsApiService.ts` to trigger the `ErrorBoundary`
 
 # Design choices log
 
@@ -21,3 +21,5 @@
 - Using plain css and plain classes to keep it simple, using prefixes to ensure scope safety
 - Created a dummy `flightsApiService` including a fake loading time, returning the provided `flights.json`
 - Slightly updated the flights data to have a few items with different originalTime from expectedTime
+- With a more sophisticated API-service (using e.g. [Tanstack Query](https://tanstack.com/query/latest/docs/framework/react/overview) to wrap the fetch) we would not need the `useEffect` in `SearchFlights.tsx` ([see why that's relevant here](https://react.dev/learn/you-might-not-need-an-effect))
+- There are many ways to catch errors, in this example I've used the [Error Boundary method from the React docs](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary).

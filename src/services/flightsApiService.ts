@@ -1,5 +1,7 @@
 import flightsData from '../data/flights.json';
 
+const REJECT_FETCH = false; // change this to true to see the Error Boundary in the UI
+
 export interface Flight {
   airport: string;
   date: string;
@@ -19,9 +21,11 @@ interface FlightResponse {
 
 export const flightsApiService = {
   fetchData: () => {
-    // throw new Error('Something went wrong retrieving the flights.'); // Enable this line to see the ErrorBoundary logic
-
     return new Promise<FlightResponse>((resolve, reject) => {
+      if (REJECT_FETCH) {
+        reject(new Error('Error fetching flights data in flightsApiService.'));
+      }
+
       setTimeout(() => {
         const data: FlightResponse = {
           success: true,

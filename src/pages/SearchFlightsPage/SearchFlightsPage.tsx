@@ -14,11 +14,11 @@ export const SearchFlightsPage = () => {
       </div>
 
       <ErrorBoundary
-        fallback={
+        fallback={(error) => (
           <Alert.Danger>
-            Oops, something went wrong. Try again later
+            Oops, something went wrong: {error.message}
           </Alert.Danger>
-        }
+        )}
       >
         <SearchFlights />
       </ErrorBoundary>

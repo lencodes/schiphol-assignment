@@ -1,5 +1,5 @@
 import './SearchFlights.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Flight, flightsApiService } from '../../services/flightsApiService';
 import { filterAndSortFlights } from '../../helpers/filterAndSortFlights';
 import { TOrder } from '../../data/types';
@@ -7,17 +7,23 @@ import { FlightListCard } from '../FlightListCard/FlightListCard';
 import { Alert } from '../Alert/Alert';
 
 export const SearchFlights = () => {
+  const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [flights, setFlights] = useState<Flight[]>([]);
   const [filterInput, setFilterInput] = useState('');
   const [order, setOrder] = useState<TOrder>('asc');
 
-  flightsApiService
-    .fetchData()
-    .then((res) => setFlights(res.data))
-    .finally(() => setIsLoading(false));
+  useEffect(() => {
+    flightsApiService
+      .fetchData()
+      .then((res) => setFlights(res.data))
+      .catch((err) => setError(err.message))
+      .finally(() => setIsLoading(false));
+  }, []);
 
   const filteredFlights = filterAndSortFlights(flights, filterInput, order);
+
+  if (error) throw new Error(error);
 
   return (
     <div className="search-flights-container">
